@@ -33,6 +33,11 @@
             color: var(--text-color);
         }
 
+        /* Prevent horizontal scroll on mobile */
+        body {
+            overflow-x: hidden;
+        }
+
         /* Global Futuristic Circuit Background */
         #global-particle-canvas {
             position: fixed;
@@ -1598,6 +1603,10 @@
             .home, .about {
                 flex-direction: column;
                 padding-top: 150px;
+                text-align: center; /* Center align content */
+            }
+            .home-content {
+                align-items: center; /* Center buttons and social media */
             }
             .home-image, .about-image {
                 margin-top: 50px;
@@ -1697,6 +1706,10 @@
                 padding-top: 40px;
             }
 
+            .about-content {
+                text-align: center;
+            }
+
             /* Responsive Timeline */
             .experience-timeline::after {
                 left: 20px;
@@ -1735,6 +1748,10 @@
                 padding: 40px;
                 gap: 40px;
             }
+            .cta-left {
+                align-items: center; /* Center align the contact capsules */
+            }
+
             .cta-right {
                 text-align: center;
             }
