@@ -408,16 +408,20 @@
                 }, 400); // Match CSS transition duration
             };
 
-            if (quoteEl) {
-                prevBtn.addEventListener('click', () => {
-                    currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
-                    updateSlider(currentSlide);
-                });
+            if (quoteEl && authorNameEl && authorTitleEl && contentEl && dots.length > 0 && prevBtn && nextBtn) {
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
+                        updateSlider(currentSlide);
+                    });
+                }
 
-                nextBtn.addEventListener('click', () => {
-                    currentSlide = (currentSlide + 1) % testimonials.length;
-                    updateSlider(currentSlide);
-                });
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        currentSlide = (currentSlide + 1) % testimonials.length;
+                        updateSlider(currentSlide);
+                    });
+                }
 
                 dots.forEach(dot => {
                     dot.addEventListener('click', () => {
