@@ -1,5 +1,13 @@
  
         document.addEventListener('DOMContentLoaded', () => {
+            const preloader = document.querySelector('.preloader');
+
+            window.addEventListener('load', () => {
+                if (preloader) {
+                    preloader.classList.add('hidden');
+                }
+            });
+
             const menuIcon = document.querySelector('.menuicon');
             const navbar = document.querySelector('.navbar');
 
@@ -89,7 +97,8 @@
             if (canvas) {
                 const ctx = canvas.getContext('2d');
                 let particles = [];
-                const particleCount = 200; // Increased number of nodes for a denser network
+                // Adjust particle count for screen size for better density and performance
+                const particleCount = window.innerWidth < 768 ? 150 : 200;
                 const connectionDistance = 100; // Slightly reduced connection distance
 
                 // Mouse object for interactivity
