@@ -1805,6 +1805,19 @@
                 padding-top: 40px;
             }
 
+            .stats-container {
+                gap: 15px;
+            }
+            .stat-card {
+                padding: 20px;
+            }
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            .timeline-item {
+                margin-bottom: 20px;
+            }
+
             .about-content {
                 text-align: center;
             }
@@ -1855,14 +1868,18 @@
                 text-align: center;
             }
 
-            .skills-filter-tabs {
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                overflow-x: auto;
-                -ms-overflow-style: none; /* IE and Edge */
-                scrollbar-width: none; /* Firefox */
+            .testimonial-slider-container {
+                max-width: 100%;
             }
-            .skills-filter-tabs::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
+            .testimonial-card::before {
+                font-size: 8rem;
+                top: 0;
+            }
+
+            .skills-filter-tabs {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
             .education-grid {
                 grid-template-columns: 1fr;
@@ -1883,5 +1900,9 @@
 
             .testimonial-card {
                 padding: 30px;
+            }
+
+            .testimonial-quote {
+                font-size: 1rem;
             }
         }
