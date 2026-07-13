@@ -442,4 +442,20 @@
                 // Initialize slider
                 updateSlider(currentSlide);
             }
+
+            // Animate on Scroll
+            const scrollElements = document.querySelectorAll('.animate-on-scroll');
+
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Animate only once
+                    }
+                });
+            }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+            scrollElements.forEach(el => {
+                scrollObserver.observe(el);
+            });
         });

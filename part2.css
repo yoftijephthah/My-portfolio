@@ -24,15 +24,25 @@
             font-family: 'Inter', sans-serif; 
         }
 
-    html,
-    body {
+    html {
             scroll-behavior: smooth;
-        overflow-x: hidden;
-        }
-
-        body {
+    }
+    body {
+            overflow-x: hidden;
             background: var(--bg-color);
             color: var(--text-color);
+        }
+
+        /* Scroll Animation Styles */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Preloader Styles */
@@ -122,6 +132,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
+            overflow: hidden; /* Prevents off-screen mobile menu from causing overflow artifacts */
         }
 
         .logo {
@@ -214,7 +225,7 @@
         }
 
         .home-content h1 {
-            font-family: 'Orbitron', sans-serif !important;
+            font-family: 'Orbitron', sans-serif;
             font-size: 56px;
             font-weight: 700;
             line-height: 1.2;
@@ -222,7 +233,7 @@
         }
 
         .home-content h2 {
-            font-family: 'Orbitron', sans-serif !important;
+            font-family: 'Orbitron', sans-serif;
             font-size: 32px;
             font-weight: 700;
             color: var(--main-color);
@@ -231,7 +242,7 @@
         }
 
         .changing-text {
-            font-family: 'Orbitron', sans-serif !important;
+            font-family: 'Orbitron', sans-serif;
             transition: opacity 1.5s ease-in-out;
             display: inline-block;
         }
@@ -306,7 +317,30 @@
             justify-content: center;
             align-items: center;
             z-index: 2;
+            position: relative;
         }
+
+        .remote-work-popup {
+            position: absolute;
+            top: -15px;
+            background: var(--btn-gradient);
+            color: var(--bg-color);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            animation: dance-vibe 3s ease-in-out infinite,
+                       glowing-border 2s ease-in-out infinite;
+        }
+
+        .remote-work-popup i {
+            margin-right: 8px;
+        }
+
         .about-image {
             width: 450px;
             height: 450px;
@@ -443,6 +477,27 @@
             to { box-shadow: 0 0 60px rgba(253, 184, 19, 0.7); transform: scale(1.05); }
         }
 
+        @keyframes glowing-border {
+            0%, 100% {
+                box-shadow: 0 0 5px #ffffff, 0 0 8px #ffffff, 0 0 10px #d3d3d3;
+            }
+            50% {
+                box-shadow: 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #d3d3d3;
+            }
+        }
+
+        @keyframes dance-vibe {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-7px) rotate(-4deg);
+            }
+            75% {
+                transform: translateY(-7px) rotate(4deg);
+            }
+        }
+
         .about {
             display: flex;
             align-items: center;
@@ -554,14 +609,14 @@
             padding: 0;
         }
 
-        .stats-title, .education-history-title {
+        h2.stats-title, h2.education-history-title {
             text-align: left;
             margin-bottom: 25px;
-            font-size: 1.2rem !important; /* Override general section-title */
+            font-size: 1.2rem; /* Override general section-title */
             display: flex;
             align-items: center;
-            text-transform: none !important;
-            letter-spacing: normal !important;
+            text-transform: none;
+            letter-spacing: normal;
         }
 
         .stats-title i, .education-history-title i {
@@ -909,7 +964,7 @@
         }
 
         .section-title {
-            font-family: 'Orbitron', sans-serif !important;
+            font-family: 'Orbitron', sans-serif;
             font-size: 3rem;
             color: var(--white-text);
             margin-bottom: 10px;
@@ -1817,39 +1872,6 @@
                 text-align: center;
             }
 
-            /* Responsive Timeline */
-            .experience-timeline::after {
-                left: 20px;
-            }
-            .timeline-container {
-                width: 100%;
-                padding-left: 55px;
-                padding-right: 15px;
-            }
-            .timeline-container.left,
-            .timeline-container.right {
-                left: 0%;
-            }
-            .timeline-container::after {
-                left: 12px;
-            }
-            .timeline-content-card {
-                /* Add arrow pointing to the timeline */
-                position: relative;
-            }
-            .timeline-content-card::before {
-                content: " ";
-                height: 0;
-                position: absolute;
-                top: 22px;
-                width: 0;
-                z-index: 1;
-                left: -10px;
-                border: medium solid rgba(255, 255, 255, 0.1);
-                border-width: 10px 10px 10px 0;
-                border-color: transparent rgba(255, 255, 255, 0.1) transparent transparent;
-            }
-            
             .cta-banner {
                 grid-template-columns: 1fr;
                 padding: 40px;
