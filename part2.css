@@ -1880,6 +1880,10 @@
             }
             .skills-filter-tabs::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
 
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
             .home-content h1 {
                 font-size: 2.5rem;
             }
