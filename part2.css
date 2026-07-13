@@ -722,7 +722,7 @@
 
         .education-card-header {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 20px;
             margin-bottom: 25px;
         }
@@ -767,7 +767,7 @@
         .details-list li i {
             color: var(--main-color);
             font-size: 1rem;
-            margin-top: 5px;
+            margin-top: 5px; /* Nudge icon down for visual alignment */
             width: 1em; /* Give icon a fixed width */
             text-align: center; /* Center the icon within the fixed width */
         }
