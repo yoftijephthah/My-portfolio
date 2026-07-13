@@ -1785,11 +1785,6 @@
                 grid-template-columns: 1fr;
             }
 
-           
-            .section-title {
-                font-size: 2.5rem;
-            }
-
             .service-card {
                 width: 90%;
                 max-width: 400px;
@@ -1877,13 +1872,13 @@
             }
 
             .skills-filter-tabs {
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
             }
-
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
+            .skills-filter-tabs::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
 
             .home-content h1 {
                 font-size: 2.5rem;
@@ -1892,7 +1887,8 @@
                 font-size: 1.8rem;
             }
             .section-title {
-                font-size: 2.2rem;
+                font-size: 1.9rem;
+                letter-spacing: 1px;
             }
             .cta-heading {
                 font-size: 1.8rem;
