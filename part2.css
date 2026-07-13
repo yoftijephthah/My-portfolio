@@ -24,18 +24,15 @@
             font-family: 'Inter', sans-serif; 
         }
 
-        html {
+    html,
+    body {
             scroll-behavior: smooth;
+        overflow-x: hidden;
         }
 
         body {
             background: var(--bg-color);
             color: var(--text-color);
-        }
-
-        /* Prevent horizontal scroll on mobile */
-        body {
-            overflow-x: hidden;
         }
 
         /* Preloader Styles */
@@ -1558,6 +1555,7 @@
             width: 100%;
             max-width: 1100px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
         }
         .cta-banner {
             position: relative; /* Needed for the pseudo-element */
@@ -1691,6 +1689,35 @@
                 gap: 50px;
                 padding-top: 60px;
                 padding-bottom: 60px;
+        }
+
+        /* Responsive Timeline - Collapse to single column for tablets and below */
+        .experience-timeline::after {
+            left: 20px;
+        }
+        .timeline-container {
+            width: 100%;
+            padding-left: 55px;
+            padding-right: 15px;
+        }
+        .timeline-container.left,
+        .timeline-container.right {
+            left: 0%;
+        }
+        .timeline-container::after {
+            left: 12px;
+        }
+        .timeline-content-card::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: -10px;
+            border: medium solid rgba(255, 255, 255, 0.1);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent rgba(255, 255, 255, 0.1) transparent transparent;
             }
         }
 
@@ -1705,6 +1732,11 @@
 
 
         @media (max-width: 768px) {
+        section {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
             .menuicon {
                 display: block; 
             }
